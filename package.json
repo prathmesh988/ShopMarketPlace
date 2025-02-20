@@ -1,0 +1,31 @@
+{
+  "name": "shop",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo run dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0",
+    "prisma": "^6.3.1",
+    "turbo": "^2.4.2",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.9",
+    "@nestjs/core": "^11.0.9",
+    "@nestjs/platform-express": "^11.0.9",
+    "@prisma/client": "^6.3.1"
+  },
+  "workspaces": [
+    "apps/*",
+    "apps/backend/*",
+    "packages/*"
+  ]
+}
