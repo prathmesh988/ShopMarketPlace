@@ -1,6 +1,6 @@
 {
   "name": "@repo/database",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,8 @@
   },
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "require": "./index.ts"
+      "import": "./index.js",
+      "require": "./index.js"
     }
   },
   "keywords": [],
