@@ -18,10 +18,14 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@heroui/card": "^2.2.14",
+    "@heroui/image": "^2.2.10",
     "@nestjs/common": "^11.0.9",
     "@nestjs/core": "^11.0.9",
     "@nestjs/platform-express": "^11.0.9",
-    "@prisma/client": "^6.3.1"
+    "@prisma/client": "^6.3.1",
+    "lucide-react": "^0.477.0",
+    "zustand": "^5.0.3"
   },
   "workspaces": [
     "apps/*",

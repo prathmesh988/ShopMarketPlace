@@ -1,56 +1,93 @@
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
+import React from 'react';
+import { ShopCard } from '@/components/Shop';
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 
-export default function Home() {
-  return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-        <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </div>
-      </div>
+const ShopData2 = [
+  {
+    seller: 'seller 1',
+    Products: [{
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 1',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    },
+    {
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 2',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    }, {
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 3',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    },
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
+    ]
+  }
+  , {
+    seller: 'seller 2',
+    Products: [{
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 1',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    },
+    {
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 2',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    }, {
+      image: 'https://heroui.com/images/album-cover.png',
+      title: 'Product 3',
+      price: '$10.00',
+      reviews: 10,
+      isAvailable: true,
+      Product: 'ProductDummy'
+    },
 
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div>
-    </section>
-  );
+    ]
+  }
+]
+export default function ShopPage() {
+  return <>
+    <div
+      className=' w-full'
+    >
+
+
+      {
+        // shopData.sort((a, b) => a.seller.localeCompare(b.seller))
+        //   .map((data, index) => <ShopCard key={index} {...data} />)
+        ShopData2.map((seller) => <>
+          <div
+            className='flex flex-col gap-2 m-3'
+          >
+            <span> {seller.seller}</span>
+            <div
+              className='flex  gap-3 flex-wrap'
+            >
+              {
+                seller.Products.map((Product) => (<ShopCard {...Product} />))
+              }
+
+            </div>
+          </div>
+        </>)
+      }
+    </div>
+  </>
 }
+
+

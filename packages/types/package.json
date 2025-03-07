@@ -1,0 +1,21 @@
+{
+  "name": "@service/types",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf .",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": ["."],
+  "exports": {
+    "import": "././index.mjs",
+    "require": "././index.js"
+  }
+}
